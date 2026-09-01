@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PSN Watch — Jaringan</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar">PROTOTIPE DESAIN · DATA DEMO · BELUM UNTUK KESIMPULAN FAKTUAL</div>
+<header class="topbar">
+<a class="brand" href="index.html">PSN <span>WATCH</span></a>
+<nav><a href="index.html">Beranda</a><a href="index.html#proyek">Proyek</a><a href="index.html#perusahaan">Perusahaan</a><a href="index.html#orang">Orang</a><a href="index.html#aturan">Aturan</a><a href="jaringan.html">Jaringan</a></nav>
+<a class="back-link" href="index.html">← Beranda</a>
+</header>
+
+<main class="network-page">
+<section class="network-hero">
+  <div>
+    <div class="eyebrow">NETWORK 2.0 · KNOWLEDGE GRAPH</div>
+    <h1>Ikuti<br>jejaringnya.</h1>
+    <p>Mulai dari satu proyek, perusahaan, orang, atau institusi. Perluas jaringan dan buka konteks di setiap hubungan. Pada versi final, setiap relasi akan mengarah ke sumber dan evidence.</p>
+  </div>
+  <div class="network-summary">
+    <div><small>ENTITAS</small><strong>—</strong></div>
+    <div><small>HUBUNGAN</small><strong>—</strong></div>
+    <div><small>PROYEK</small><strong>—</strong></div>
+    <div><small>VERIFIED</small><strong>—</strong></div>
+  </div>
+</section>
+
+<section class="network-app">
+<div class="legend-2"><span><i class="l-project"></i>Proyek</span><span><i class="l-company"></i>Perusahaan</span><span><i class="l-person"></i>Orang</span><span><i class="l-institution"></i>Institusi</span></div>
+<div class="network-toolbar">
+  <input id="entitySearch" placeholder="Cari entitas di jaringan…">
+  <button class="active" data-filter="all">Semua</button>
+  <button data-filter="project">Proyek</button>
+  <button data-filter="corporate">Korporasi</button>
+  <button data-filter="people">Orang</button>
+  <button id="reset">Reset</button>
+</div>
+
+<div class="graph-shell">
+  <div class="graph-mini"><button id="zin">＋</button><button id="zout">−</button><button id="zreset">↺</button><span>Scroll untuk zoom · drag untuk geser</span></div>
+  <svg id="networkSvg" viewBox="0 0 1200 650" aria-label="Grafik jejaring entitas">
+    <g id="viewport"></g>
+  </svg>
+  <aside id="inspector" class="inspector-2">
+    <div class="mini-label">DETAIL</div><h3>Belum dipilih</h3><p>Klik node atau garis hubungan.</p>
+  </aside>
+</div>
+<div class="network-notice"><b>Catatan metodologi:</b> visual jaringan tidak menyatakan bahwa kedekatan antarentitas berarti konflik kepentingan, kesalahan, atau pelanggaran. Hubungan final hanya ditampilkan bersama jenis hubungan, periode, dan evidence.</div>
+</section>
+</main>
+<footer><span>PSN Watch Indonesia · Network 2.0</span><span>Evidence-first · Hubungan dapat ditelusuri</span></footer>
+
+<script>
+const nodes=[
+{id:"px",label:"PROYEK X",type:"project",x:600,y:320},
+{id:"a",label:"PERUSAHAAN A",type:"company",x:330,y:145},
+{id:"b",label:"PERUSAHAAN B",type:"company",x:870,y:145},
+{id:"c",label:"PERUSAHAAN C",type:"company",x:310,y:495},
+{id:"d",label:"PERUSAHAAN D",type:"company",x:890,y:495},
+{id:"pa",label:"ORANG A",type:"person",x:115,y:320},
+{id:"pb",label:"ORANG B",type:"person",x:1085,y:320},
+{id:"ia",label:"INSTITUSI A",type:"institution",x:125,y:560},
+{id:"ib",label:"INSTITUSI B",type:"institution",x:1075,y:560}
+];
+const edges=[
+{id:"e1",a:"px",b:"a",kind:"project",rel:"kontraktor",note:"Demo relationship."},
+{id:"e2",a:"px",b:"b",kind:"project",rel:"investor / BUMN",note:"Demo relationship."},
+{id:"e3",a:"px",b:"c",kind:"project",rel:"operator",note:"Demo relationship."},
+{id:"e4",a:"px",b:"d",kind:"project",rel:"konsorsium",note:"Demo relationship."},
+{id:"e5",a:"a",b:"pa",kind:"people",rel:"direktur",note:"Pada data final akan ditautkan ke dokumen jabatan."},
+{id:"e6",a:"b",b:"pb",kind:"people",rel:"komisaris",note:"Pada data final akan ditautkan ke dokumen jabatan."},
+{id:"e7",a:"c",b:"ia",kind:"corporate",rel:"struktur perusahaan",note:"Jenis dan arah relationship akan ditentukan oleh evidence."},
+{id:"e8",a:"d",b:"ib",kind:"corporate",rel:"hubungan korporasi",note:"Jenis dan arah relationship akan ditentukan oleh evidence."}
+];
+let scale=1,tx=0,ty=0,drag=null,filter="all",selectedNode=null,selectedEdge=null;
+const $=id=>document.getElementById(id), byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
+function draw(){
+ const vp=$("viewport");vp.innerHTML='<g id="edges"></g><g id="nodes"></g>';
+ const eg=$("edges"),ng=$("nodes");
+ edges.forEach(e=>{
+  const a=byId[e.a],b=byId[e.b],line=document.createElementNS("http://www.w3.org/2000/svg","line");
+  Object.assign(line.dataset,{id:e.id,kind:e.kind});
+  line.setAttribute("x1",a.x);line.setAttribute("y1",a.y);line.setAttribute("x2",b.x);line.setAttribute("y2",b.y);line.setAttribute("class",`graph-edge ${e.kind}`);
+  line.addEventListener("click",ev=>{ev.stopPropagation();selectEdge(e.id)});eg.appendChild(line);
+ });
+ nodes.forEach(n=>{
+  const g=document.createElementNS("http://www.w3.org/2000/svg","g"),r=n.type==="project"?52:40;
+  g.setAttribute("class",`graph-node ${n.type}`);g.dataset.id=n.id;g.setAttribute("transform",`translate(${n.x} ${n.y})`);
+  g.innerHTML=`<circle r="${r}"></circle><text y="4">${n.label}</text>`;g.addEventListener("click",ev=>{ev.stopPropagation();selectNode(n.id)});ng.appendChild(g);
+ });
+ apply();applyFilter();
+}
+function apply(){ $("viewport").setAttribute("transform",`translate(${tx} ${ty}) scale(${scale})`); }
+function selectNode(id){selectedNode=id;selectedEdge=null;document.querySelectorAll(".graph-node").forEach(n=>n.classList.toggle("selected",n.dataset.id===id));document.querySelectorAll(".graph-edge").forEach(e=>e.classList.remove("selected"));const n=byId[id];$("inspector").innerHTML=`<div class="mini-label">ENTITAS</div><h3>${n.label}</h3><div class="relation">${n.type}</div><p>Versi final akan menampilkan profil entitas, proyek terkait, relationship, periode, dan confidence.</p><div class="source-box"><b>Evidence:</b> belum tersedia · demo</div>`;}
+function selectEdge(id){selectedEdge=id;selectedNode=null;document.querySelectorAll(".graph-node").forEach(n=>n.classList.remove("selected"));document.querySelectorAll(".graph-edge").forEach(e=>e.classList.toggle("selected",e.dataset.id===id));const e=edges.find(x=>x.id===id);const a=byId[e.a],b=byId[e.b];$("inspector").innerHTML=`<div class="mini-label">HUBUNGAN</div><h3>${e.rel}</h3><div class="relation">${a.label} → ${b.label}</div><p>${e.note}</p><div class="source-box"><b>Periode:</b> —<br><b>Sumber:</b> placeholder demo<br><b>Status:</b> needs review</div>`;}
+function applyFilter(){document.querySelectorAll(".graph-edge").forEach(e=>e.classList.toggle("dim",filter!=="all"&&e.dataset.kind!==filter));document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));const q=$("entitySearch").value.toLowerCase().trim();document.querySelectorAll(".graph-node").forEach(n=>{const hit=!q||n.textContent.toLowerCase().includes(q);n.style.opacity=hit?"1":".18";});}
+function reset(){scale=1;tx=0;ty=0;selectedNode=null;selectedEdge=null;apply();filter="all";$("entitySearch").value="";document.querySelectorAll(".graph-node").forEach(n=>{n.classList.remove("selected");n.style.opacity="1"});document.querySelectorAll(".graph-edge").forEach(e=>e.classList.remove("selected","dim"));$("inspector").innerHTML='<div class="mini-label">DETAIL</div><h3>Belum dipilih</h3><p>Klik node atau garis hubungan.</p>';applyFilter();}
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;applyFilter()}));
+$("entitySearch").addEventListener("input",applyFilter);$("reset").addEventListener("click",reset);
+$("zin").addEventListener("click",()=>{scale=Math.min(2.2,scale*1.15);apply()});$("zout").addEventListener("click",()=>{scale=Math.max(.55,scale/1.15);apply()});$("zreset").addEventListener("click",reset);
+$("networkSvg").addEventListener("wheel",e=>{e.preventDefault();scale=Math.max(.55,Math.min(2.2,scale*(e.deltaY<0?1.08:.92)));apply()},{passive:false});
+$("networkSvg").addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,tx,ty};$("networkSvg").setPointerCapture?.(e.pointerId);});
+$("networkSvg").addEventListener("pointermove",e=>{if(!drag)return;tx=drag.tx+(e.clientX-drag.x);ty=drag.ty+(e.clientY-drag.y);apply()});
+$("networkSvg").addEventListener("pointerup",()=>drag=null);$("networkSvg").addEventListener("pointerleave",()=>drag=null);
+draw();
+</script>
+</body>
+</html>
