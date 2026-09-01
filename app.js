@@ -1,33 +1,16 @@
-const projects=[
-["P001","Jalan Tol Sigli – Banda Aceh","Jalan","Aceh","Berjalan","Rp 16,5 T","proyek-serang-panimbang.html"],
-["P002","Jalan Tol Kayu Agung – Palembang – Betung","Jalan","Sumatera Selatan","Operasi","Rp 17,3 T","proyek-serang-panimbang.html"],
-["P003","Jalan Tol Serang – Panimbang","Jalan","Banten","Operasi","Rp 9,9 T","proyek-serang-panimbang.html"],
-["P004","Konstruksi Tangki Penyimpanan LPG (Kupang)","Energi","Indonesia Timur","Berjalan","Rp 0,32 T","proyek-serang-panimbang.html"],
-["P005","Pipa Transmisi Gas Bumi Cirebon – Semarang Tahap II","Energi","Jawa Barat & Jawa Tengah","Berjalan","Rp 2,79 T","proyek-serang-panimbang.html"],
-["P006","Kawasan Industri Tanah Kuning (PT ISI)","Kawasan","Kalimantan Utara","Berjalan","Rp 55 T","proyek-serang-panimbang.html"],
-["P007","Bendungan Jragung","Bendungan","Jawa Tengah","Berjalan","Rp 2,8 T","proyek-serang-panimbang.html"],
-["P008","SPAM Regional Benteng – Kobema","Air","Bengkulu","Selesai","Rp 0,9 T","proyek-serang-panimbang.html"],
-["P009","Kawasan Industri Kuala Tanjung","Kawasan","Sumatera Utara","Berjalan","Rp 28,8 T","proyek-serang-panimbang.html"],
-["P010","Kawasan Industri Wiraraja GESEIP","Kawasan","Kepulauan Riau","Berjalan","Rp 343,79 T","proyek-serang-panimbang.html"]
-];
+const files=["projects.csv","programs.csv","companies.csv","people.csv","institutions.csv","regulations.csv","sources.csv","evidence.csv","relationships.csv","observations.csv"];
+const data={};const $=id=>document.getElementById(id);
+function parseCSV(t){const rows=[];let row=[],cell="",q=false;for(let i=0;i<t.length;i++){const c=t[i],n=t[i+1];if(c==='"'&&q&&n==='"'){cell+='"';i++;}else if(c==='"')q=!q;else if(c===','&&!q){row.push(cell);cell="";}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cell);if(row.some(v=>v!==""))rows.push(row);row=[];cell="";}else cell+=c;}if(cell||row.length){row.push(cell);rows.push(row);}const h=rows.shift().map(x=>x.trim());return rows.map(r=>Object.fromEntries(h.map((k,i)=>[k,(r[i]??"").trim()])));}
+async function load(name){const r=await fetch("data/"+name,{cache:"no-store"});if(!r.ok)throw Error(name+" tidak ditemukan");return parseCSV(await r.text());}
 const esc=s=>(s??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
-function renderProjects(){
- const q=document.getElementById("projectSearch").value.toLowerCase().trim(), sec=document.getElementById("sectorFilter").value, st=document.getElementById("statusFilter").value;
- const items=projects.filter(p=>(!q||[p[1],p[2],p[3]].join(" ").toLowerCase().includes(q))&&(!sec||p[2]===sec)&&(!st||p[4]===st));
- document.getElementById("projectGrid").innerHTML=items.map(p=>`<a class="project-card" href="${p[6]}"><span class="tag">${esc(p[2])}</span><h3>${esc(p[1])}</h3><div class="meta">${esc(p[3])}</div><div class="card-bottom"><span>${esc(p[4])}</span><b>${esc(p[5])}</b></div></a>`).join("")||'<div class="meta">Tidak ada proyek yang cocok.</div>';
-}
-document.getElementById("projectSearch").addEventListener("input",renderProjects);
-document.getElementById("sectorFilter").addEventListener("change",renderProjects);
-document.getElementById("statusFilter").addEventListener("change",renderProjects);
-document.getElementById("searchOpen").addEventListener("click",()=>{document.getElementById("searchDialog").showModal();setTimeout(()=>document.getElementById("globalSearch").focus(),40)});
-document.getElementById("closeSearch").addEventListener("click",()=>document.getElementById("searchDialog").close());
-document.getElementById("searchDialog").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
-const searchIndex=projects.map(p=>({type:"Proyek",name:p[1],meta:`${p[2]} · ${p[3]}`,url:p[6]})).concat([
-{type:"Aturan",name:"Permenko 16 / 19 / 20 Tahun 2025",meta:"Perubahan dan mekanisme perubahan daftar PSN",url:"#aturan"},
-{type:"Perusahaan",name:"Perusahaan A",meta:"Demo · belum diverifikasi",url:"#perusahaan"},
-{type:"Orang",name:"Orang A",meta:"Demo · belum diverifikasi",url:"#orang"}]);
-document.getElementById("globalSearch").addEventListener("input",()=>{
- const q=document.getElementById("globalSearch").value.toLowerCase().trim(); const hits=q?searchIndex.filter(x=>(x.name+" "+x.meta).toLowerCase().includes(q)).slice(0,15):[];
- document.getElementById("searchResults").innerHTML=hits.length?hits.map(h=>`<a class="result" href="${h.url}"><span>${esc(h.type)}</span><b>${esc(h.name)}</b><span>${esc(h.meta)}</span></a>`).join(""):'<div class="meta">Ketik proyek, perusahaan, orang, atau aturan.</div>';
-});
-renderProjects();
+function unique(field,list){return [...new Set(list.map(x=>x[field]).filter(Boolean))].sort();}
+function renderProjects(){const q=$("projectSearch").value.toLowerCase().trim(),sec=$("sectorFilter").value,st=$("statusFilter").value;const list=(data.projects||[]).filter(p=>(!q||[p.name,p.province,p.sector].join(" ").toLowerCase().includes(q))&&(!sec||p.sector===sec)&&(!st||p.status===st));$("projectGrid").innerHTML=list.map(p=>`<a class="project-card" href="proyek-serang-panimbang.html"><span class="tag">${esc(p.sector)}</span><h3>${esc(p.name)}</h3><div class="meta">${esc(p.province)}</div><div class="card-bottom"><span>${esc(p.status)}</span><b>${p.investment_value?("Rp "+(Number(p.investment_value)/1e12).toLocaleString("id-ID",{minimumFractionDigits:3,maximumFractionDigits:3})+" T"):"—"}</b></div></a>`).join("")||'<div class="meta">Tidak ada hasil.</div>';}
+function renderCompanies(){$("companyGrid").innerHTML=(data.companies||[]).map(c=>`<a class="company-card" href="perusahaan-a.html"><div class="company-type">${esc(c.entity_type)}</div><h3>${esc(c.legal_name)}</h3><div class="meta">${esc(c.role_default||"")}</div></a>`).join("")||'<div class="meta">Belum ada perusahaan.</div>';}
+function renderPeople(){$("peopleGrid").innerHTML=(data.people||[]).map(p=>`<a class="person-card" href="orang-a.html"><span class="tag">${esc(p.verification_status||"DATA")}</span><h3>${esc(p.name)}</h3><div class="role">${esc(p.current_or_last_role||"")}</div><div class="linkline">${esc(p.current_or_last_company_id||"")}</div></a>`).join("")||'<div class="meta">Belum ada orang.</div>';}
+function renderRules(){$("regulationList").innerHTML=(data.regulations||[]).map(r=>`<div class="rule"><span>${esc(r.year)}</span><div><b>${esc(r.title)}</b><small>${esc(r.notes||"")}</small></div><em>${esc(r.regulation_type)}</em></div>`).join("")||'<div class="meta">Belum ada regulasi.</div>';}
+function buildFilters(){unique("sector",data.projects||[]).forEach(v=>$("sectorFilter").insertAdjacentHTML("beforeend",`<option>${esc(v)}</option>`));unique("status",data.projects||[]).forEach(v=>$("statusFilter").insertAdjacentHTML("beforeend",`<option>${esc(v)}</option>`));}
+async function init(){try{for(const f of files)data[f.replace(".csv","")]=await load(f);$("statProjects").textContent=(data.projects||[]).length;$("statPrograms").textContent=(data.programs||[]).filter(x=>x.name&&x.name!=="[contoh program]").length;$("statCompanies").textContent=(data.companies||[]).length;$("statRelations").textContent=(data.relationships||[]).length;buildFilters();renderProjects();renderCompanies();renderPeople();renderRules();$("loadStatus").textContent="Dataset termuat";}catch(e){$("loadStatus").textContent="Gagal memuat dataset: "+e.message;console.error(e);}}
+$("projectSearch").addEventListener("input",renderProjects);$("sectorFilter").addEventListener("change",renderProjects);$("statusFilter").addEventListener("change",renderProjects);
+$("searchOpen").addEventListener("click",()=>{$("searchDialog").showModal();setTimeout(()=>$("globalSearch").focus(),40)});$("closeSearch").addEventListener("click",()=>$("searchDialog").close());$("searchDialog").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+$("globalSearch").addEventListener("input",()=>{const q=$("globalSearch").value.toLowerCase().trim();const all=[...(data.projects||[]).map(x=>({t:"Proyek",n:x.name,m:x.province,u:"proyek-serang-panimbang.html"})),...(data.companies||[]).map(x=>({t:"Perusahaan",n:x.legal_name,m:x.role_default,u:"perusahaan-a.html"})),...(data.people||[]).map(x=>({t:"Orang",n:x.name,m:x.current_or_last_role,u:"orang-a.html"})),...(data.regulations||[]).map(x=>({t:"Aturan",n:x.title,m:x.year,u:"#aturan"}))];const hit=q?all.filter(x=>(x.n+" "+x.m).toLowerCase().includes(q)).slice(0,20):[];$("searchResults").innerHTML=hit.length?hit.map(x=>`<a class="result" href="${x.u}"><span>${esc(x.t)}</span><b>${esc(x.n)}</b><span>${esc(x.m)}</span></a>`).join(""):'<div class="meta">Ketik minimal satu kata.</div>';});
+init();
