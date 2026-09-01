@@ -3,106 +3,188 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PSN Watch Indonesia</title>
-  <meta name="description" content="Database publik Proyek Strategis Nasional Indonesia berbasis sumber dan evidence.">
+  <title>PSN Watch — Indonesia</title>
+  <meta name="description" content="Public-interest intelligence interface for Indonesia's National Strategic Projects.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#top">PSN <span>WATCH</span></a>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#methodology">Metodologi</a>
-    <a href="#sources">Sources</a>
-  </nav>
-</header>
+  <div class="demo-bar">DEMO INTERFACE · DATA DI DALAM TAMPILAN INI BELUM MERUPAKAN DATA FINAL</div>
 
-<main id="top">
-  <section class="hero">
-    <div>
-      <div class="eyebrow">OPEN-DATA PROJECT</div>
-      <h1>Memetakan proyek,<br>uang, perusahaan<br>& aturan.</h1>
-      <p class="lead">PSN Watch adalah knowledge base publik untuk menelusuri Proyek Strategis Nasional Indonesia berdasarkan sumber, bukti, dan perubahan dari waktu ke waktu.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="#projects">Jelajahi proyek</a>
-        <a class="button secondary" href="#methodology">Metodologi</a>
+  <header class="topbar">
+    <a class="brand" href="#top">PSN <span>WATCH</span></a>
+    <nav>
+      <a href="#dashboard">Overview</a>
+      <a href="#projects">Projects</a>
+      <a href="#companies">Companies</a>
+      <a href="#people">People</a>
+      <a href="#rules">Rules</a>
+      <a href="#network">Network</a>
+    </nav>
+    <button id="searchOpen" class="search-btn">⌕ <span>Search</span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="dashboard">
+      <div class="hero-copy">
+        <div class="eyebrow">PUBLIC INTEREST INTELLIGENCE</div>
+        <h1>Who builds it.<br>Who funds it.<br>Who connects to it.</h1>
+        <p>PSN Watch memetakan proyek, perusahaan, uang, regulasi, dan koneksi antar-entitas dalam satu ruang yang dapat ditelusuri ke sumber publik.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore projects</a>
+          <a class="button secondary" href="#network">Open network</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-note">
-      <div class="note-title">PRINSIP</div>
-      <div>Source-first</div>
-      <div>Primary-source-first</div>
-      <div>Time-aware data</div>
-      <div>Evidence untuk setiap klaim</div>
-    </div>
-  </section>
+      <div class="hero-card">
+        <div class="mini-label">CURRENT MODEL</div>
+        <div class="hero-metric">PROJECT → MONEY → COMPANY → PEOPLE → RULES</div>
+        <div class="hero-line"></div>
+        <div class="hero-note">Setiap connection nantinya dapat dibuka sampai ke evidence dan dokumen sumber.</div>
+      </div>
+    </section>
 
-  <section class="stats">
-    <div class="stat"><strong id="projectCount">—</strong><span>proyek pilot</span></div>
-    <div class="stat"><strong id="sectorCount">—</strong><span>sektor</span></div>
-    <div class="stat"><strong id="sourceCount">—</strong><span>sumber primer</span></div>
-    <div class="stat"><strong id="verifiedCount">—</strong><span>evidence verified</span></div>
-  </section>
+    <section class="control-strip">
+      <div class="control-label">FILTER</div>
+      <select id="sectorFilter"><option value="">Semua sektor</option><option>Jalan</option><option>Energi</option><option>Kawasan</option><option>Air</option><option>Bendungan</option></select>
+      <select id="statusFilter"><option value="">Semua status</option><option>Berjalan</option><option>Operasi</option><option>Perencanaan</option><option>Selesai</option></select>
+      <select id="provinceFilter"><option value="">Semua wilayah</option><option>Aceh</option><option>Banten</option><option>Jawa Tengah</option><option>Sumatera Selatan</option><option>Kalimantan Utara</option><option>Bengkulu</option><option>Sumatera Utara</option><option>Kepulauan Riau</option></select>
+      <span class="filter-spacer"></span>
+      <span class="last-update">Last model update: <b>01 Sep 2026</b></span>
+    </section>
 
-  <section class="section" id="projects">
-    <div class="section-head">
+    <section class="kpis">
+      <div><span class="kpi-label">PROJECTS</span><strong>10</strong><small>pilot dataset</small></div>
+      <div><span class="kpi-label">INVESTMENT</span><strong>—</strong><small>to be verified</small></div>
+      <div><span class="kpi-label">COMPANIES</span><strong>—</strong><small>to be mapped</small></div>
+      <div><span class="kpi-label">RELATIONSHIPS</span><strong>—</strong><small>evidence pending</small></div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-title-row">
+        <div>
+          <div class="eyebrow">01 / PROJECTS</div>
+          <h2>Project explorer</h2>
+          <p>Mulai dari proyek. Ikuti jejak uang, perusahaan, aturan, dan orang yang terhubung.</p>
+        </div>
+        <input id="projectSearch" class="search-input" placeholder="Cari proyek atau lokasi...">
+      </div>
+      <div id="projectGrid" class="project-grid"></div>
+    </section>
+
+    <section class="section alt" id="companies">
+      <div class="section-title-row">
+        <div>
+          <div class="eyebrow">02 / COMPANIES</div>
+          <h2>Company intelligence</h2>
+          <p>Siapa yang mengerjakan proyek apa, sebagai kontraktor, konsorsium, operator, atau pemilik.</p>
+        </div>
+        <div class="section-counter"><b>NETWORK</b><span>corporate structure</span></div>
+      </div>
+      <div class="company-grid" id="companyGrid"></div>
+    </section>
+
+    <section class="section" id="people">
+      <div class="section-title-row">
+        <div>
+          <div class="eyebrow">03 / PEOPLE</div>
+          <h2>People & public office</h2>
+          <p>Jabatan, masa jabatan, peran korporasi, dan hubungan publik—tanpa menyamakan koneksi dengan kesalahan.</p>
+        </div>
+      </div>
+      <div class="people-grid" id="peopleGrid"></div>
+    </section>
+
+    <section class="section alt" id="rules">
+      <div class="section-title-row">
+        <div>
+          <div class="eyebrow">04 / RULES & MONEY</div>
+          <h2>Rules, money & timeline</h2>
+          <p>Lapisan yang menjawab: proyek ini berdiri di atas aturan apa dan uangnya datang dari mana.</p>
+        </div>
+      </div>
+      <div class="rules-layout">
+        <div class="rule-panel">
+          <div class="panel-title">LEGAL TIMELINE</div>
+          <div class="timeline">
+            <div><span>2016</span><b>Kerangka PSN</b><small>peraturan dasar</small></div>
+            <div><span>2021</span><b>Kemudahan PSN</b><small>kerangka pelaksanaan</small></div>
+            <div><span>2025</span><b>Daftar diperbarui</b><small>perubahan & penambahan</small></div>
+            <div><span>2026</span><b>Monitoring</b><small>snapshot terbaru</small></div>
+          </div>
+        </div>
+        <div class="money-panel">
+          <div class="panel-title">FUNDING MODEL</div>
+          <div class="money-bars">
+            <div><span>APBN / APBD</span><i style="width:26%"></i><b>verify</b></div>
+            <div><span>BUMN</span><i style="width:41%"></i><b>verify</b></div>
+            <div><span>Swasta</span><i style="width:63%"></i><b>verify</b></div>
+            <div><span>KPBU</span><i style="width:34%"></i><b>verify</b></div>
+          </div>
+          <div class="panel-note">Visual ini sengaja hanya menunjukkan desain komponen, bukan klaim pembagian pendanaan.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section network-section" id="network">
+      <div class="section-title-row">
+        <div>
+          <div class="eyebrow">05 / KNOWLEDGE GRAPH</div>
+          <h2>Follow the network</h2>
+          <p>Mulai dari satu entitas lalu buka koneksinya. Setiap garis nantinya akan memiliki tipe hubungan dan evidence.</p>
+        </div>
+        <div class="graph-legend">
+          <span><i class="dot project"></i>Project</span>
+          <span><i class="dot company"></i>Company</span>
+          <span><i class="dot person"></i>Person</span>
+          <span><i class="dot institution"></i>Institution</span>
+        </div>
+      </div>
+      <div class="network-canvas">
+        <svg viewBox="0 0 1100 560" role="img" aria-label="Demo knowledge graph">
+          <g class="edge-lines">
+            <line x1="550" y1="280" x2="250" y2="130"/><line x1="550" y1="280" x2="850" y2="130"/>
+            <line x1="550" y1="280" x2="225" y2="405"/><line x1="550" y1="280" x2="875" y2="405"/>
+            <line x1="250" y1="130" x2="105" y2="270"/><line x1="850" y1="130" x2="995" y2="270"/>
+            <line x1="225" y1="405" x2="105" y2="505"/><line x1="875" y1="405" x2="995" y2="505"/>
+          </g>
+          <g class="node project" data-node="Project X"><circle cx="550" cy="280" r="52"/><text x="550" y="276">PROJECT</text><text x="550" y="297">PSN X</text></g>
+          <g class="node company" data-node="Company A"><circle cx="250" cy="130" r="42"/><text x="250" y="134">COMPANY A</text></g>
+          <g class="node company" data-node="Company B"><circle cx="850" cy="130" r="42"/><text x="850" y="134">COMPANY B</text></g>
+          <g class="node company" data-node="Company C"><circle cx="225" cy="405" r="42"/><text x="225" y="409">COMPANY C</text></g>
+          <g class="node company" data-node="Company D"><circle cx="875" cy="405" r="42"/><text x="875" y="409">COMPANY D</text></g>
+          <g class="node person" data-node="Person A"><circle cx="105" cy="270" r="35"/><text x="105" y="274">PERSON A</text></g>
+          <g class="node person" data-node="Person B"><circle cx="995" cy="270" r="35"/><text x="995" y="274">PERSON B</text></g>
+          <g class="node institution" data-node="Institution A"><circle cx="105" cy="505" r="35"/><text x="105" y="509">INSTITUTION</text></g>
+          <g class="node institution" data-node="Institution B"><circle cx="995" cy="505" r="35"/><text x="995" y="509">INSTITUTION</text></g>
+        </svg>
+        <div id="nodeInspector" class="node-inspector">
+          <div class="mini-label">SELECT A NODE</div>
+          <b>Klik node pada graph</b>
+          <p>Detail hubungan, periode, tipe evidence, dan source akan muncul di sini.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section methodology">
       <div>
-        <div class="eyebrow">PROJECT EXPLORER</div>
-        <h2>Daftar proyek</h2>
-        <p class="sub">Klik kartu untuk melihat detail, sumber, dan evidence yang sudah tersedia.</p>
+        <div class="eyebrow">METHODOLOGY</div>
+        <h2>Evidence before inference.</h2>
+        <p>Website ini memisahkan fakta terverifikasi, laporan sekunder, dan inferensi. Label “political/public connection” hanya muncul ketika hubungan spesifik memiliki evidence yang dapat ditelusuri.</p>
       </div>
-      <input id="search" class="search" placeholder="Cari proyek, sektor, lokasi..." autocomplete="off">
-    </div>
-    <div id="projectGrid" class="grid"></div>
-    <div id="empty" class="empty" hidden>Tidak ada proyek yang cocok.</div>
-  </section>
-
-  <section class="section" id="methodology">
-    <div class="eyebrow">METHOD</div>
-    <div class="split">
-      <div>
-        <h2>Bagaimana data dibangun?</h2>
-        <p>Data proyek berasal dari snapshot resmi dan dapat berubah. Setiap klaim penting dirancang untuk memiliki sumber, lokasi bukti, status verifikasi, dan tanggal.</p>
+      <div class="method-cards">
+        <div><span>01</span><b>Source</b><small>dokumen asal</small></div>
+        <div><span>02</span><b>Evidence</b><small>halaman / bagian</small></div>
+        <div><span>03</span><b>Relationship</b><small>jenis hubungan</small></div>
+        <div><span>04</span><b>Status</b><small>verified / reported / disputed</small></div>
       </div>
-      <div class="method-list">
-        <div><b>01</b><span>Discovery lewat search engine & sumber publik.</span></div>
-        <div><b>02</b><span>Utamakan regulasi, laporan pemerintah, LKPP/OJK/BEI, dan laporan perusahaan.</span></div>
-        <div><b>03</b><span>Ekstraksi kandidat → review → evidence → publikasi.</span></div>
-        <div><b>04</b><span>Riwayat perubahan disimpan; fakta dan inferensi dipisahkan.</span></div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="section" id="sources">
-    <div class="eyebrow">SOURCES</div>
-    <h2>Sumber yang digunakan</h2>
-    <div id="sourceList" class="sources"></div>
-  </section>
+  <footer><span>PSN Watch Indonesia · UI Prototype v0.3</span><span>Open data · Evidence-first · Public interest research</span></footer>
 
-  <section class="section roadmap">
-    <div class="eyebrow">NEXT LAYER</div>
-    <h2>Dari database → knowledge graph</h2>
-    <div class="roadmap-grid">
-      <div><span>01</span><b>Project detail</b><p>Status, nilai, lokasi, PJ proyek, timeline.</p></div>
-      <div><span>02</span><b>Company graph</b><p>Perusahaan, kontraktor, konsorsium, anak perusahaan.</p></div>
-      <div><span>03</span><b>People & public office</b><p>Direksi, komisaris, jabatan publik berbasis evidence.</p></div>
-      <div><span>04</span><b>Interactive network</b><p>Mind map yang bisa dieksplorasi dan ditelusuri ke sumber.</p></div>
-    </div>
-  </section>
-</main>
+  <dialog id="detailDialog"><div class="dialog-inner"><button id="closeDialog" class="close">×</button><div id="detailContent"></div></div></dialog>
 
-<footer>
-  <div>PSN Watch Indonesia · Prototype v0.2</div>
-  <div>Open data · Evidence-first · Public interest research</div>
-</footer>
+  <dialog id="searchDialog"><div class="dialog-inner search-dialog"><button id="closeSearch" class="close">×</button><div class="eyebrow">GLOBAL SEARCH</div><h2>Cari apa saja</h2><input id="globalSearch" class="global-search" placeholder="Proyek, perusahaan, orang, regulasi..."><div id="searchResults" class="results"></div></div></dialog>
 
-<dialog id="detailDialog">
-  <div class="dialog-inner">
-    <button id="closeDialog" class="close" aria-label="Tutup">×</button>
-    <div id="detailContent"></div>
-  </div>
-</dialog>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
