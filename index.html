@@ -1,207 +1,160 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PSN Watch Indonesia</title>
-  <meta name="description" content="Platform publik untuk menelusuri Proyek Strategis Nasional Indonesia melalui proyek, uang, perusahaan, orang, aturan, dan bukti.">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PSN Watch — Indonesia</title>
+<meta name="description" content="Platform publik untuk menelusuri Proyek Strategis Nasional Indonesia.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="demo-bar">PROTOTIPE DESAIN · DATA DI DALAM TAMPILAN INI BELUM MERUPAKAN DATA FINAL</div>
+<div class="demo-bar">PROTOTIPE DESAIN · DATA DEMO · BELUM UNTUK KESIMPULAN FAKTUAL</div>
 
-  <header class="topbar">
-    <a class="brand" href="#beranda">PSN <span>WATCH</span></a>
-    <nav>
-      <a href="#beranda">Beranda</a>
-      <a href="#proyek">Proyek</a>
-      <a href="#perusahaan">Perusahaan</a>
-      <a href="#orang">Orang</a>
-      <a href="#aturan">Aturan</a>
-      <a href="#jaringan">Jaringan</a>
-    </nav>
-    <button id="searchOpen" class="search-btn">⌕ <span>Cari</span></button>
-  </header>
+<header class="topbar">
+  <a class="brand" href="#beranda">PSN <span>WATCH</span></a>
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#perusahaan">Perusahaan</a>
+    <a href="#orang">Orang</a>
+    <a href="#aturan">Aturan</a>
+    <a href="#jaringan">Jaringan</a>
+  </nav>
+  <button id="searchOpen" class="search-btn">⌕ <span>Cari</span></button>
+</header>
 
-  <main id="beranda">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">PUSAT DATA PUBLIK</div>
-        <h1>Siapa yang<br>membangun.<br>Dari mana dananya.<br>Siapa yang terhubung.</h1>
-        <p>PSN Watch memetakan Proyek Strategis Nasional Indonesia melalui proyek, pendanaan, perusahaan, orang, aturan, dan hubungan antar-entitas—dengan sumber yang dapat ditelusuri.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#proyek">Jelajahi PSN</a>
-          <a class="button secondary" href="#jaringan">Lihat jaringan</a>
-        </div>
+<main id="beranda">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">PUSAT DATA PUBLIK</div>
+      <h1>Siapa yang<br>membangun.<br>Dari mana dananya.<br>Siapa yang terhubung.</h1>
+      <p>Menelusuri Proyek Strategis Nasional melalui proyek, pendanaan, perusahaan, orang, aturan, dan bukti yang dapat dilacak.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#proyek">Jelajahi PSN</a>
+        <a class="button secondary" href="#jaringan">Buka jaringan</a>
       </div>
-      <div class="hero-card">
-        <div class="mini-label">CARA MEMBACA</div>
-        <div class="flow">PROYEK <i>→</i> UANG <i>→</i> PERUSAHAAN <i>→</i> ORANG <i>→</i> ATURAN</div>
-        <div class="hero-line"></div>
-        <div class="hero-note">Mulai dari proyek. Ikuti jejaknya. Buka bukti di setiap hubungan.</div>
-      </div>
-    </section>
+    </div>
+    <div class="hero-card">
+      <div class="mini-label">MODEL DATA</div>
+      <div class="flow">PROYEK <i>→</i> UANG <i>→</i> PERUSAHAAN <i>→</i> ORANG <i>→</i> ATURAN</div>
+      <div class="hero-line"></div>
+      <div class="hero-note">Semua hubungan dirancang agar dapat ditelusuri sampai ke sumber dan evidence.</div>
+    </div>
+  </section>
 
-    <section class="stats">
-      <div><span>PROYEK</span><strong>226</strong><small>snapshot contoh</small></div>
-      <div><span>NILAI INVESTASI</span><strong>—</strong><small>akan dihitung dari data final</small></div>
-      <div><span>PERUSAHAAN</span><strong>—</strong><small>akan dipetakan</small></div>
-      <div><span>BUKTI TERVERIFIKASI</span><strong>3</strong><small>contoh evidence</small></div>
-    </section>
+  <section class="stats">
+    <div><span>PROYEK</span><strong>226</strong><small>contoh snapshot</small></div>
+    <div><span>NILAI INVESTASI</span><strong>—</strong><small>menunggu verifikasi</small></div>
+    <div><span>PERUSAHAAN</span><strong>—</strong><small>akan dipetakan</small></div>
+    <div><span>BUKTI</span><strong>—</strong><small>akan diverifikasi</small></div>
+  </section>
 
-    <section class="section map-section">
-      <div class="section-title-row">
-        <div>
-          <div class="eyebrow">PETA INDONESIA</div>
-          <h2>Sebaran proyek</h2>
-          <p>Jelajahi PSN berdasarkan lokasi. Pada versi data final, setiap titik akan terhubung langsung ke halaman proyek.</p>
-        </div>
-        <div class="map-filters">
-          <button class="chip active">Semua</button>
-          <button class="chip">Jalan</button>
-          <button class="chip">Energi</button>
-          <button class="chip">Kawasan</button>
-          <button class="chip">Air</button>
-        </div>
+  <section class="section" id="proyek">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">01 / DAFTAR PSN</div>
+        <h2>Jelajahi proyek</h2>
+        <p>Mulai dari satu proyek. Lihat status, uang, perusahaan, aturan, dokumen, dan jaringan yang terkait.</p>
       </div>
-      <div class="map-card">
-        <div class="map-copy">
-          <div class="map-stat"><b>INDONESIA</b><span>Peta interaktif</span></div>
-          <div class="map-hint">Versi berikutnya akan menampilkan titik proyek nyata, cluster wilayah, dan filter sektor.</div>
-        </div>
-        <svg class="map-svg" viewBox="0 0 720 360" aria-label="Placeholder peta Indonesia">
-          <path class="island a" d="M55 106c36-36 84-33 111-12 18 14 13 29 2 42-18 20-45 31-80 26-34-5-55-25-33-56z"/>
-          <path class="island b" d="M224 91c22-21 52-28 77-17 22 10 30 34 14 53-16 19-46 26-70 17-22-8-37-30-21-53z"/>
-          <path class="island c" d="M232 156c43-19 91-11 107 15 12 20-2 39-30 48-38 12-90-1-106-27-12-18 4-28 29-36z"/>
-          <path class="island d" d="M381 100c21-15 48-11 58 6 10 17 2 35-18 45-20 10-48 7-58-9-9-15 2-31 18-42z"/>
-          <path class="island e" d="M422 177c36-17 89-5 113 20 17 18 6 38-24 44-38 8-86-8-108-30-17-17-10-25 19-34z"/>
-          <path class="island f" d="M550 94c29-16 63-14 82 3 18 16 15 37-4 49-22 14-65 10-88-7-19-14-13-31 10-45z"/>
-          <path class="island g" d="M591 184c19-9 41-5 53 7 12 12 10 28-5 36-18 10-44 6-55-6-11-12-8-26 7-37z"/>
-          <g class="map-dot" data-name="Aceh" style="left:16%;top:28%"><circle cx="130" cy="99" r="7"/><text x="145" y="103">Aceh</text></g>
-          <g class="map-dot" data-name="Sumatera" style="left:35%;top:47%"><circle cx="250" cy="160" r="7"/><text x="265" y="164">Sumatera</text></g>
-          <g class="map-dot" data-name="Jawa" style="left:48%;top:60%"><circle cx="350" cy="210" r="7"/><text x="365" y="214">Jawa</text></g>
-          <g class="map-dot" data-name="Kalimantan" style="left:58%;top:33%"><circle cx="415" cy="120" r="7"/><text x="430" y="124">Kalimantan</text></g>
-          <g class="map-dot" data-name="Sulawesi" style="left:69%;top:50%"><circle cx="500" cy="180" r="7"/><text x="515" y="184">Sulawesi</text></g>
-          <g class="map-dot" data-name="Papua" style="left:84%;top:60%"><circle cx="610" cy="215" r="7"/><text x="625" y="219">Papua</text></g>
-        </svg>
+      <div class="filters">
+        <select id="sectorFilter"><option value="">Semua sektor</option><option>Jalan</option><option>Energi</option><option>Kawasan</option><option>Air</option><option>Bendungan</option></select>
+        <select id="statusFilter"><option value="">Semua status</option><option>Berjalan</option><option>Operasi</option><option>Selesai</option></select>
+        <input id="projectSearch" placeholder="Cari proyek atau lokasi…">
       </div>
-    </section>
+    </div>
+    <div id="projectGrid" class="project-grid"></div>
+  </section>
 
-    <section class="section" id="proyek">
-      <div class="section-title-row">
-        <div>
-          <div class="eyebrow">01 / PROYEK</div>
-          <h2>Daftar Proyek Strategis Nasional</h2>
-          <p>Ini adalah pintu masuk utama ke seluruh knowledge base.</p>
-        </div>
-        <div class="section-actions">
-          <select id="sectorFilter"><option value="">Semua sektor</option><option>Jalan</option><option>Energi</option><option>Kawasan</option><option>Air</option><option>Bendungan</option></select>
-          <select id="statusFilter"><option value="">Semua status</option><option>Berjalan</option><option>Operasi</option><option>Selesai</option></select>
-          <input id="projectSearch" class="search-input" placeholder="Cari proyek...">
-        </div>
+  <section class="section alt" id="perusahaan">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">02 / PERUSAHAAN</div>
+        <h2>Profil perusahaan</h2>
+        <p>Struktur, peran dalam proyek, proyek terkait, dan jaringan perusahaan.</p>
       </div>
-      <div id="projectGrid" class="project-grid"></div>
-    </section>
+    </div>
+    <div id="companyGrid" class="company-grid"></div>
+  </section>
 
-    <section class="section alt" id="perusahaan">
-      <div class="section-title-row">
-        <div>
-          <div class="eyebrow">02 / PERUSAHAAN</div>
-          <h2>Profil perusahaan</h2>
-          <p>Lapisan untuk melihat siapa yang muncul di proyek mana dan dalam kapasitas apa.</p>
-        </div>
-        <div class="section-counter"><b>COMPANY INDEX</b><span>terhubung ke proyek</span></div>
+  <section class="section" id="orang">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">03 / ORANG</div>
+        <h2>Orang & jabatan publik</h2>
+        <p>Riwayat jabatan dan hubungan yang dapat didokumentasikan. Tanpa melompat dari hubungan ke tuduhan.</p>
       </div>
-      <div class="company-grid" id="companyGrid"></div>
-    </section>
+    </div>
+    <div id="peopleGrid" class="people-grid"></div>
+  </section>
 
-    <section class="section" id="orang">
-      <div class="section-title-row">
-        <div>
-          <div class="eyebrow">03 / ORANG</div>
-          <h2>Orang & jabatan publik</h2>
-          <p>Riwayat jabatan dan hubungan yang dapat didokumentasikan. Hubungan bukan otomatis kesalahan.</p>
-        </div>
+  <section class="section alt" id="aturan">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">04 / ATURAN</div>
+        <h2>Pusat regulasi</h2>
+        <p>Kerangka hukum, perubahan daftar, dan timeline perubahan yang mengikat data PSN.</p>
       </div>
-      <div class="people-grid" id="peopleGrid"></div>
-    </section>
+    </div>
+    <div class="rule-timeline">
+      <div class="rule"><span>2016</span><div><b>Perpres No. 3 Tahun 2016</b><small>Kerangka awal percepatan proyek strategis nasional.</small></div><em>Dokumen</em></div>
+      <div class="rule"><span>2021</span><div><b>PP No. 42 Tahun 2021</b><small>Kemudahan proyek strategis nasional.</small></div><em>Dokumen</em></div>
+      <div class="rule"><span>2025</span><div><b>Permenko 16 / 19 / 20 Tahun 2025</b><small>Perubahan, penambahan, dan mekanisme perubahan daftar PSN.</small></div><em>Dokumen</em></div>
+      <div class="rule"><span>SEKARANG</span><div><b>Snapshot & histori</b><small>Status disimpan berdasarkan tanggal dan sumber.</small></div><em>Metodologi</em></div>
+    </div>
+  </section>
 
-    <section class="section alt" id="aturan">
-      <div class="section-title-row">
-        <div>
-          <div class="eyebrow">04 / ATURAN</div>
-          <h2>Pusat regulasi PSN</h2>
-          <p>Kerangka hukum menjadi backbone bagi setiap proyek dan perubahan daftar PSN.</p>
-        </div>
+  <section class="section network-section" id="jaringan">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">05 / JARINGAN 2.0</div>
+        <h2>Ikuti jejaringnya</h2>
+        <p>Zoom, geser, filter hubungan, pilih node, lalu pilih garis untuk melihat detail hubungan.</p>
       </div>
-      <div class="rule-timeline">
-        <div class="rule"><span>2016</span><div><b>Perpres No. 3 Tahun 2016</b><small>Kerangka awal percepatan PSN</small></div></div>
-        <div class="rule"><span>2021</span><div><b>PP No. 42 Tahun 2021</b><small>Kemudahan proyek strategis nasional</small></div></div>
-        <div class="rule"><span>2025</span><div><b>Permenko 16 / 19 / 20 Tahun 2025</b><small>Perubahan, penambahan, dan mekanisme perubahan daftar PSN</small></div></div>
-        <div class="rule"><span>SEKARANG</span><div><b>Snapshot & histori</b><small>Status proyek disimpan berdasarkan tanggal dan sumber</small></div></div>
+      <div class="network-controls">
+        <button class="chip active" data-edgefilter="all">Semua</button>
+        <button class="chip" data-edgefilter="project">Proyek</button>
+        <button class="chip" data-edgefilter="corporate">Korporasi</button>
+        <button class="chip" data-edgefilter="people">Orang</button>
+        <button class="chip" id="resetGraph">Reset</button>
       </div>
-    </section>
-
-    <section class="section" id="jaringan">
-      <div class="section-title-row">
-        <div>
-          <div class="eyebrow">05 / JARINGAN ENTITAS</div>
-          <h2>Ikuti hubungan antar-entitas</h2>
-          <p>Pilih proyek, perusahaan, atau orang. Perluas jaringan tanpa kehilangan jejak sumber.</p>
-        </div>
-        <div class="graph-tools">
-          <button class="chip active">Semua hubungan</button>
-          <button class="chip">Kepemilikan</button>
-          <button class="chip">Jabatan</button>
-          <button class="chip">Proyek</button>
-        </div>
+    </div>
+    <div class="network-2">
+      <div class="graph-toolbar">
+        <button id="zoomIn">＋</button><button id="zoomOut">−</button><button id="zoomReset">↺</button>
+        <span>Scroll untuk zoom · drag canvas untuk geser</span>
       </div>
-      <div class="network-wrap">
-        <div class="network-canvas">
-          <svg viewBox="0 0 1100 520" role="img" aria-label="Demo jaringan entitas">
-            <g class="edge-lines">
-              <line x1="550" y1="260" x2="275" y2="125"/><line x1="550" y1="260" x2="830" y2="125"/>
-              <line x1="550" y1="260" x2="275" y2="395"/><line x1="550" y1="260" x2="830" y2="395"/>
-              <line x1="275" y1="125" x2="120" y2="260"/><line x1="830" y1="125" x2="980" y2="260"/>
-              <line x1="275" y1="395" x2="120" y2="470"/><line x1="830" y1="395" x2="980" y2="470"/>
-            </g>
-            <g class="node project" data-node="Proyek X"><circle cx="550" cy="260" r="52"/><text x="550" y="256">PROYEK</text><text x="550" y="277">X</text></g>
-            <g class="node company" data-node="Perusahaan A"><circle cx="275" cy="125" r="42"/><text x="275" y="129">PERUSAHAAN A</text></g>
-            <g class="node company" data-node="Perusahaan B"><circle cx="830" cy="125" r="42"/><text x="830" y="129">PERUSAHAAN B</text></g>
-            <g class="node company" data-node="Perusahaan C"><circle cx="275" cy="395" r="42"/><text x="275" y="399">PERUSAHAAN C</text></g>
-            <g class="node company" data-node="Perusahaan D"><circle cx="830" cy="395" r="42"/><text x="830" y="399">PERUSAHAAN D</text></g>
-            <g class="node person" data-node="Orang A"><circle cx="120" cy="260" r="35"/><text x="120" y="264">ORANG A</text></g>
-            <g class="node person" data-node="Orang B"><circle cx="980" cy="260" r="35"/><text x="980" y="264">ORANG B</text></g>
-            <g class="node institution" data-node="Institusi A"><circle cx="120" cy="470" r="35"/><text x="120" y="474">INSTITUSI</text></g>
-            <g class="node institution" data-node="Institusi B"><circle cx="980" cy="470" r="35"/><text x="980" y="474">INSTITUSI</text></g>
-          </svg>
-          <div id="nodeInspector" class="node-inspector"><div class="mini-label">PILIH NODE</div><b>Klik titik pada jaringan</b><p>Versi final akan menampilkan jenis hubungan, periode, sumber, dan evidence.</p></div>
-        </div>
+      <svg id="graphSvg" viewBox="0 0 1200 650" aria-label="Jaringan entitas demo">
+        <g id="graphViewport"></g>
+      </svg>
+      <aside id="edgeInspector" class="inspector">
+        <div class="mini-label">DETAIL HUBUNGAN</div>
+        <h3>Belum dipilih</h3>
+        <p>Klik node atau garis pada jaringan.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">06 / BUKTI</div>
+        <h2>Bukti sebelum kesimpulan.</h2>
+        <p>Setiap hubungan penting pada versi final akan memiliki sumber, halaman/section, tanggal, dan status verifikasi.</p>
       </div>
-    </section>
-
-    <section class="section evidence">
-      <div class="evidence-head">
-        <div>
-          <div class="eyebrow">06 / BUKTI</div>
-          <h2>Bukti sebelum kesimpulan.</h2>
-          <p>Fakta, laporan, dan inferensi dipisahkan. Setiap relationship penting diarahkan ke evidence.</p>
-        </div>
-        <div class="evidence-stack">
-          <div><span>01</span><b>Sumber</b><small>dokumen asal</small></div>
-          <div><span>02</span><b>Bukti</b><small>halaman / bagian</small></div>
-          <div><span>03</span><b>Hubungan</b><small>jenis relasi</small></div>
-          <div><span>04</span><b>Status</b><small>terverifikasi / dilaporkan / sengketa</small></div>
-        </div>
+      <div class="evidence-grid">
+        <div><span>01</span><b>Sumber</b><small>dokumen asal</small></div>
+        <div><span>02</span><b>Bukti</b><small>halaman / bagian</small></div>
+        <div><span>03</span><b>Hubungan</b><small>jenis relasi</small></div>
+        <div><span>04</span><b>Status</b><small>terverifikasi / dilaporkan / sengketa</small></div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer><span>PSN Watch Indonesia · Prototype UI v0.4</span><span>Open data · Berbasis sumber · Untuk kepentingan publik</span></footer>
+<footer><span>PSN Watch Indonesia · Prototype UI v0.5</span><span>Open data · Evidence-first · Untuk kepentingan publik</span></footer>
 
-  <dialog id="detailDialog"><div class="dialog-inner"><button id="closeDialog" class="close">×</button><div id="detailContent"></div></div></dialog>
-  <dialog id="searchDialog"><div class="dialog-inner search-dialog"><button id="closeSearch" class="close">×</button><div class="eyebrow">PENCARIAN GLOBAL</div><h2>Cari di PSN Watch</h2><input id="globalSearch" class="global-search" placeholder="Proyek, perusahaan, orang, aturan..."><div id="searchResults" class="results"></div></div></dialog>
-
-  <script src="app.js"></script>
+<dialog id="detailDialog"><div class="dialog-inner large-dialog"><button id="closeDialog" class="close">×</button><div id="detailContent"></div></div></dialog>
+<dialog id="searchDialog"><div class="dialog-inner"><button id="closeSearch" class="close">×</button><div class="eyebrow">PENCARIAN GLOBAL</div><h2>Cari di PSN Watch</h2><input id="globalSearch" class="global-search" placeholder="Proyek, perusahaan, orang, aturan…"><div id="searchResults" class="results"></div></div></dialog>
+<script src="app.js"></script>
 </body>
 </html>
