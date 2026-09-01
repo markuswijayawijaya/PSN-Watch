@@ -8,60 +8,61 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">PSN <span>WATCH</span></div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#methodology">Metodologi</a>
-      <a href="#sources">Sources</a>
-    </nav>
-  </header>
+<header class="topbar">
+  <a class="brand" href="#top">PSN <span>WATCH</span></a>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#methodology">Metodologi</a>
+    <a href="#sources">Sources</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
+<main id="top">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">OPEN-DATA PROJECT</div>
+      <h1>Memetakan proyek,<br>uang, perusahaan<br>& aturan.</h1>
+      <p class="lead">PSN Watch adalah knowledge base publik untuk menelusuri Proyek Strategis Nasional Indonesia berdasarkan sumber, bukti, dan perubahan dari waktu ke waktu.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">Jelajahi proyek</a>
+        <a class="button secondary" href="#methodology">Metodologi</a>
+      </div>
+    </div>
+    <div class="hero-note">
+      <div class="note-title">PRINSIP</div>
+      <div>Source-first</div>
+      <div>Primary-source-first</div>
+      <div>Time-aware data</div>
+      <div>Evidence untuk setiap klaim</div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><strong id="projectCount">—</strong><span>proyek pilot</span></div>
+    <div class="stat"><strong id="sectorCount">—</strong><span>sektor</span></div>
+    <div class="stat"><strong id="sourceCount">—</strong><span>sumber primer</span></div>
+    <div class="stat"><strong id="verifiedCount">—</strong><span>evidence verified</span></div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-head">
       <div>
-        <div class="eyebrow">OPEN-DATA PROJECT</div>
-        <h1>Memetakan proyek, uang,<br>perusahaan & aturan.</h1>
-        <p class="lead">PSN Watch adalah prototype knowledge base publik untuk menelusuri Proyek Strategis Nasional Indonesia berdasarkan sumber dan evidence.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">Jelajahi proyek</a>
-          <a class="button secondary" href="#methodology">Lihat metodologi</a>
-        </div>
+        <div class="eyebrow">PROJECT EXPLORER</div>
+        <h2>Daftar proyek</h2>
+        <p class="sub">Klik kartu untuk melihat detail, sumber, dan evidence yang sudah tersedia.</p>
       </div>
-      <div class="hero-note">
-        <div class="note-title">PRINSIP</div>
-        <div>Source-first</div>
-        <div>Primary-source-first</div>
-        <div>Time-aware data</div>
-        <div>Evidence untuk setiap klaim</div>
-      </div>
-    </section>
+      <input id="search" class="search" placeholder="Cari proyek, sektor, lokasi..." autocomplete="off">
+    </div>
+    <div id="projectGrid" class="grid"></div>
+    <div id="empty" class="empty" hidden>Tidak ada proyek yang cocok.</div>
+  </section>
 
-    <section class="stats" id="stats">
-      <div class="stat"><strong id="projectCount">—</strong><span>proyek pilot</span></div>
-      <div class="stat"><strong id="sectorCount">—</strong><span>sektor</span></div>
-      <div class="stat"><strong id="sourceCount">—</strong><span>sumber primer</span></div>
-      <div class="stat"><strong id="verifiedCount">—</strong><span>evidence verified</span></div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">PROJECT EXPLORER</div>
-          <h2>Daftar proyek</h2>
-        </div>
-        <input id="search" class="search" placeholder="Cari proyek, sektor, lokasi..." autocomplete="off">
-      </div>
-
-      <div id="projectGrid" class="grid"></div>
-      <div id="empty" class="empty" hidden>Tidak ada proyek yang cocok.</div>
-    </section>
-
-    <section class="section split" id="methodology">
+  <section class="section" id="methodology">
+    <div class="eyebrow">METHOD</div>
+    <div class="split">
       <div>
-        <div class="eyebrow">METHOD</div>
         <h2>Bagaimana data dibangun?</h2>
-        <p>Data proyek berasal dari snapshot resmi dan dapat berubah sepanjang waktu. Setiap klaim penting dirancang untuk memiliki sumber, lokasi bukti, status verifikasi, dan tanggal.</p>
+        <p>Data proyek berasal dari snapshot resmi dan dapat berubah. Setiap klaim penting dirancang untuk memiliki sumber, lokasi bukti, status verifikasi, dan tanggal.</p>
       </div>
       <div class="method-list">
         <div><b>01</b><span>Discovery lewat search engine & sumber publik.</span></div>
@@ -69,27 +70,39 @@
         <div><b>03</b><span>Ekstraksi kandidat → review → evidence → publikasi.</span></div>
         <div><b>04</b><span>Riwayat perubahan disimpan; fakta dan inferensi dipisahkan.</span></div>
       </div>
-    </section>
-
-    <section class="section" id="sources">
-      <div class="eyebrow">SOURCES</div>
-      <h2>Sumber yang digunakan</h2>
-      <div id="sourceList" class="sources"></div>
-    </section>
-  </main>
-
-  <footer>
-    <div>PSN Watch Indonesia · Prototype v0.1</div>
-    <div>Open data · Evidence-first · Public interest research</div>
-  </footer>
-
-  <dialog id="detailDialog">
-    <div class="dialog-inner">
-      <button id="closeDialog" class="close">×</button>
-      <div id="detailContent"></div>
     </div>
-  </dialog>
+  </section>
 
-  <script src="app.js"></script>
+  <section class="section" id="sources">
+    <div class="eyebrow">SOURCES</div>
+    <h2>Sumber yang digunakan</h2>
+    <div id="sourceList" class="sources"></div>
+  </section>
+
+  <section class="section roadmap">
+    <div class="eyebrow">NEXT LAYER</div>
+    <h2>Dari database → knowledge graph</h2>
+    <div class="roadmap-grid">
+      <div><span>01</span><b>Project detail</b><p>Status, nilai, lokasi, PJ proyek, timeline.</p></div>
+      <div><span>02</span><b>Company graph</b><p>Perusahaan, kontraktor, konsorsium, anak perusahaan.</p></div>
+      <div><span>03</span><b>People & public office</b><p>Direksi, komisaris, jabatan publik berbasis evidence.</p></div>
+      <div><span>04</span><b>Interactive network</b><p>Mind map yang bisa dieksplorasi dan ditelusuri ke sumber.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>PSN Watch Indonesia · Prototype v0.2</div>
+  <div>Open data · Evidence-first · Public interest research</div>
+</footer>
+
+<dialog id="detailDialog">
+  <div class="dialog-inner">
+    <button id="closeDialog" class="close" aria-label="Tutup">×</button>
+    <div id="detailContent"></div>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
 </body>
 </html>
