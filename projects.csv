@@ -1,0 +1,11 @@
+﻿project_id,name,sector,province,status,investment_value,start_date,target_completion,source_id,notes
+P001,Jalan Tol Sigli – Banda Aceh,Jalan,Aceh & Sumatera Utara,target_selesai_2026,16.5 T,,2026,src_iru_2026,
+P002,Jalan Tol Kayu Agung – Palembang – Betung,Jalan,Sumatera Selatan,target_selesai_2026,17.3 T,,2026,src_iru_2026,
+P003,Jalan Tol Serang – Panimbang,Jalan,Banten,target_selesai_2026,9.9 T,,2026,src_iru_2026,
+P004,Konstruksi Tangki Penyimpanan LPG (Kupang),Energi,Nusa Tenggara / Indonesia Timur,target_selesai_2026,0.32 T,,2026,src_iru_2026,
+P005,Pipa Transmisi Gas Bumi Cirebon – Semarang Tahap II (Batang – Indramayu),Energi,Jawa Barat & Jawa Tengah,target_selesai_2026,2.79 T,,2026,src_iru_2026,
+P006,Kawasan Industri Tanah Kuning (PT ISI),Kawasan,Kalimantan Utara,target_selesai_2026,55 T,,2026,src_iru_2026,
+P007,Bendungan Jragung,Bendungan dan Irigasi,Jawa Tengah,target_selesai_2026,2.8 T,,2026,src_iru_2026,
+P008,SPAM Regional Benteng – Kobema,Air Bersih dan Sanitasi,Bengkulu,target_selesai_2026,0.9 T,,2026,src_iru_2026,
+P009,Kawasan Industri Kuala Tanjung,Kawasan,Sumatera Utara,target_selesai_2026,28.8 T,,2026,src_iru_2026,
+P010,Kawasan Industri Wiraraja Green Renewable Energy & Smart-Eco Industrial Park (GESEIP),Kawasan,Kepulauan Riau,target_selesai_2026,343.79 T,,2026,src_iru_2026,
