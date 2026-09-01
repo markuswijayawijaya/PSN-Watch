@@ -1,9 +1,11 @@
-﻿evidence_id,source_id,entity_id,claim_type,claim,page_or_section,quote,verification_status
-E001,S001,P001,Status PSN / proyek,KPPIP menampilkan Jalan Tol Serang–Panimbang sebagai Proyek Strategis Nasional dan status Beroperasi Sebagian.,,,verified
-E002,S002,P001,Nilai investasi,"KPPIP mencantumkan Investasi Total Rp9,934 triliun; APBN/APBD Rp4,604 T; swasta Rp5,330 T; skema KPBU.",,,verified
-E003,S003,P001,Skema KPBU,"SIMPUL mencantumkan indikasi investasi Rp8,57 T, konstruksi Rp5,63 T, konsesi 50 tahun, BOT, user charge.",,,verified
-E004,S005,P001,Progress 23 Jan 2026,"BPJT mencatat Seksi 2 97,09% dan Seksi 3 73,68%; Seksi 3 target rampung 2027.",,,verified
-E005,S006,P001,Progress 5 Feb 2026,"WIKA mencatat Seksi 2 96,78%; Seksi 3A 99,78%; Seksi 3B 58,95%.",,,verified
-E006,S007,C001,BUJT / perusahaan,"WIKA menyebut PT Wijaya Karya Serang Panimbang sebagai pengusaha jalan tol dan hasil kerja sama WIKA, PTPP, Jababeka Infrastruktur.",,,verified
-E007,S008,C001,Ownership change,"Laporan tahunan WIKA 2025 menyatakan kepemilikan WIKA di WSP berubah dari 82,98% menjadi 84,17% melalui penambahan modal pada 2024.",,,verified
-E008,S010,P001,Dasar PSN historis,Annual report WSP menyebut proyek sebagai PSN sesuai Perpres 56/2018 dan PPJT ditandatangani 22 Feb 2017.,,,verified
+﻿evidence_id,source_id,subject_id,claim_type,claim,as_of,page_or_section,verification_status
+E001,S001,P001,status,KPPIP menampilkan proyek sebagai PSN dengan status Beroperasi Sebagian.,2026,,documented
+E002,S002,P001,investment_total,"KPPIP mencantumkan investasi total Rp9,934 T; APBN/APBD Rp4,604 T; swasta Rp5,330 T.",2026,,documented
+E003,S003,P001,investment_total_context,"SIMPUL menampilkan indikasi investasi Rp8,57 T dan indikasi konstruksi Rp5,63 T.",2026,,documented
+E004,S005,P001,progress,"23 Jan 2026: Seksi 2 97,09%; Seksi 3 73,68%.",2026-01-23,,documented
+E005,S006,P001,progress,"5 Feb 2026: Seksi 2 96,78%; Seksi 3A 99,78%; Seksi 3B 58,95%.",2026-02-05,,documented
+E006,S006,C001,role,WSP dicatat sebagai pengusaha/BUJT proyek.,2026-02-05,,documented
+E007,S008,C001,ownership_change,"Kepemilikan WIKA di WSP berubah dari 82,98% menjadi 84,17% melalui penambahan modal pada 2024.",2024,,documented
+E008,S004,P001,timeline,29 Jun 2016: penetapan lokasi.,2016-06-29,,documented
+E009,S009,P001,timeline,Jan 2017: pemenang lelang konsesi ditetapkan.,2017-01,,documented
+E010,S010,P001,legal,22 Feb 2017: PPJT ditandatangani; proyek disebut PSN dalam laporan WSP.,2017-02-22,,documented

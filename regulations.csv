@@ -1,1 +1,5 @@
-﻿regulation_id,case_id,title,type,date,status,url,source_id,what_it_regulates
+﻿regulation_id,title,year,regulation_type,issuer,url,source_id,verification_status,notes
+R001,Perpres No. 3 Tahun 2016,2016,Perpres,,,S004,documented,Kerangka awal percepatan PSN; detail issuer/url perlu dilengkapi.
+R002,Perpres No. 56 Tahun 2018,2018,Perpres,,,S010,documented,Disebut dalam laporan WSP sebagai dasar status PSN historis.
+R003,PP No. 42 Tahun 2021,2021,PP,,,S003,documented,Kerangka kemudahan PSN/KPBU.
+R004,Permenko No. 12 Tahun 2024,2024,Permenko,,https://kppip.go.id/wp-content/uploads/filebase/peraturan/permen/permenko/Permenko_Nomor_12_Tahun_2024_Perubahan_Keenam_Daftar_PSN.pdf,,documented,Lampiran mencantumkan Jalan Tol Serang–Panimbang.

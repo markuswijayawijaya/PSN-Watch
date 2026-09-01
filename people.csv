@@ -1,1 +1,2 @@
-﻿person_id,name,role,organization,valid_from,valid_to,public_role,notes
+﻿person_id,name,current_or_last_role,current_or_last_company_id,current_or_last_institution_id,current_source_id,as_of,verification_status,notes
+PE001,Orang A,,C001,,,2026-09-01,placeholder,Nama belum diganti dengan identitas nyata sebelum dokumen jabatan diverifikasi.

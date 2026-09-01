@@ -1,0 +1,11 @@
+﻿observation_id,subject_id,field,value,unit,valid_from,valid_to,observed_on,source_id,evidence_id,verification_status,notes
+O001,P001,length,83.67,km,,,2026-09-01,S001,,documented,Nilai proyek menurut KPPIP.
+O002,P001,investment_total,9934000000000,IDR,,,2026-09-01,S002,E002,documented,Jangan disamakan dengan angka SIMPUL tanpa konteks.
+O003,P001,investment_total,8570000000000,IDR,,,2026-09-01,S003,E003,documented,Indikasi investasi pada halaman SIMPUL KPBU.
+O004,P001,section_2_progress,97.09,percent,,,2026-01-23,S005,E004,documented,BPJT observation.
+O005,P001,section_2_progress,96.78,percent,,,2026-02-05,S006,E005,documented,WIKA observation.
+O006,P001,section_3_progress,73.68,percent,,,2026-01-23,S005,E004,documented,BPJT observation.
+O007,P001,section_3A_progress,99.78,percent,,,2026-02-05,S006,E005,documented,WIKA observation.
+O008,P001,section_3B_progress,58.95,percent,,,2026-02-05,S006,E005,documented,WIKA observation.
+O009,C001,WIKA_ownership,84.17,percent,2024,,2026-09-01,S008,E007,documented,Ownership must remain time-aware.
+O010,C001,WIKA_ownership,82.98,percent,,2024,2026-09-01,S008,E007,documented,Historical value immediately before 2024 capital increase.

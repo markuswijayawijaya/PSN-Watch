@@ -1,1 +1,2 @@
-﻿program_id,case_id,program_name,description,status,source_id
+﻿program_id,name,sector,status,current_source_id,as_of,verification_status,notes
+PRG001,[contoh program],,,,,placeholder,Belum diisi.

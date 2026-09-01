@@ -1,1 +1,2 @@
-﻿company_id,name,company_type,group_name,parent_company_id,website,notes
+﻿company_id,legal_name,common_name,entity_type,role_default,group_name,current_source_id,as_of,verification_status,notes
+C001,PT Wijaya Karya Serang Panimbang,PT Wijaya Karya Serang Panimbang,BUJT,Pengusaha jalan tol,,S006,2026-02-05,documented,Struktur kepemilikan disimpan terpisah di relationships/observations.

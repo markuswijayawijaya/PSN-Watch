@@ -1,1 +1,5 @@
-﻿relationship_id,case_id,source_type,source_id,relationship_type,target_type,target_id,valid_from,valid_to,confidence,evidence_id,notes
+﻿relationship_id,from_id,from_type,relationship_type,to_id,to_type,valid_from,valid_to,source_id,evidence_id,verification_status,notes
+REL001,C001,company,operates,P001,project,,,S001,E006,documented,BUJT/pengusaha proyek.
+REL002,C001,company,historical_shareholder_of,C002,company,2022,,S009,,pending,C002 placeholder untuk struktur historis; jangan dipublikasi sebelum entity C002 dibuat.
+REL003,C003,company,part_of_initial_consortium,P001,project,2017,,S009,E009,documented,PT Pembangunan Perumahan (Persero) Tbk.
+REL004,C004,company,part_of_initial_consortium,P001,project,2017,,S009,E009,documented,PT Jababeka Infrastruktur.

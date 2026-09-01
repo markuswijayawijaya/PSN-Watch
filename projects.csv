@@ -1,1 +1,2 @@
-﻿project_id,case_id,project_name,sector,location,status,planning_status,investment_value,currency,target_completion,source_id
+﻿project_id,name,entity_type,sector,province,status,target_year,investment_value,investment_currency,scheme,pjpk_or_responsible,parent_program_id,current_source_id,as_of,verification_status,notes
+P001,Jalan Tol Serang–Panimbang,project,Jalan dan Jembatan,Banten,Beroperasi sebagian,2026,9934000000000,IDR,KPBU,Kementerian PUPR,,S001,2026-09-01,documented,Pilot benchmark; nilai investasi mengikuti KPPIP.
