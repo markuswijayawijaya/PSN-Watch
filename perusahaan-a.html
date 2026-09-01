@@ -24,6 +24,7 @@
 .source-panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:20px}.source-item{padding:13px 0;border-top:1px solid var(--line)}.source-item:first-child{border-top:0;padding-top:0}.source-item b{font-size:12px}.source-item span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
 @media(max-width:1000px){.company-profile,.company-content{grid-template-columns:1fr}}
 @media(max-width:650px){.company-profile h1{font-size:54px}.company-facts{grid-template-columns:1fr}.company-facts div{border-right:0}.company-facts div:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.company-facts div:last-child{border-bottom:0}.board{grid-template-columns:1fr}.ownership-row{grid-template-columns:1fr}.ownership-bar{margin:4px 0}}
+.board-card,.company-list a{display:block;color:inherit;text-decoration:none}.company-list a:hover article{background:var(--panel2)}
 </style>
 </head>
 <body>
@@ -89,7 +90,7 @@
 
   <section id="board" class="wide-block">
     <div class="section-label">DIREKSI & KOMISARIS</div><h2>Orang di dalam perusahaan</h2>
-    <div class="board"><div class="board-card"><small>DIREKTUR</small><b>Orang A</b><span>Periode jabatan · DEMO</span></div><div class="board-card"><small>KOMISARIS</small><b>Orang B</b><span>Periode jabatan · DEMO</span></div><div class="board-card"><small>DIREKTUR</small><b>Orang C</b><span>Periode jabatan · DEMO</span></div><div class="board-card"><small>KOMISARIS</small><b>Orang D</b><span>Periode jabatan · DEMO</span></div></div>
+    <div class="board"><a class="board-card" href="orang-a.html"><small>DIREKTUR</small><b>Orang A</b><span>Periode jabatan · DEMO</span></a><a class="board-card" href="orang-a.html"><small>KOMISARIS</small><b>Orang B</b><span>Periode jabatan · DEMO</span></a><a class="board-card" href="orang-a.html"><small>DIREKTUR</small><b>Orang C</b><span>Periode jabatan · DEMO</span></a><a class="board-card" href="orang-a.html"><small>KOMISARIS</small><b>Orang D</b><span>Periode jabatan · DEMO</span></a></div>
   </section>
 
   <section id="pemegang-saham" class="wide-block">
@@ -103,7 +104,7 @@
 
   <section id="orang" class="wide-block">
     <div class="section-label">ORANG TERKAIT</div><h2>Relasi yang terdokumentasi</h2>
-    <div class="company-list"><article><b>Orang A</b><span>Direktur · DEMO</span></article><article><b>Orang B</b><span>Komisaris · DEMO</span></article><article><b>Orang C</b><span>Jabatan publik · DEMO</span></article></div>
+    <div class="company-list"><a href="orang-a.html"><article><b>Orang A</b><span>Direktur · DEMO</span></article></a><a href="orang-a.html"><article><b>Orang B</b><span>Komisaris · DEMO</span></article></a><a href="orang-a.html"><article><b>Orang C</b><span>Jabatan publik · DEMO</span></article></a></div>
   </section>
 
   <section id="jaringan" class="wide-block">
