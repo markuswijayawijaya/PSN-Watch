@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PSN Watch — Profil Perusahaan</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.company-profile{padding:42px 0 52px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.25fr .75fr;gap:50px}
+.company-profile h1{font-size:clamp(52px,7vw,88px);line-height:.92;letter-spacing:-.055em;margin:15px 0 20px}
+.company-profile p{color:var(--muted);line-height:1.75;max-width:720px}
+.company-badge{display:inline-flex;padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:var(--orange);font:500 10px "DM Mono",monospace}
+.company-facts{align-self:end;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.company-facts div{padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.company-facts div:nth-child(2n){border-right:0}.company-facts div:nth-last-child(-n+2){border-bottom:0}
+.company-facts small{display:block;color:var(--muted);font:500 9px "DM Mono",monospace}.company-facts b{display:block;margin-top:7px;font-size:14px}
+.company-tabs{display:flex;gap:7px;overflow:auto;padding:13px 0;border-bottom:1px solid var(--line);position:sticky;top:55px;background:rgba(8,10,12,.94);backdrop-filter:blur(10px);z-index:10}
+.company-tabs a{white-space:nowrap;padding:8px 11px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:11px}.company-tabs a.active,.company-tabs a:hover{background:var(--accent);color:#071000;border-color:var(--accent);font-weight:700}
+.company-content{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;padding:68px 0;border-bottom:1px solid var(--line)}
+.company-section{margin-bottom:52px}.company-section h2{font-size:clamp(30px,4vw,50px);line-height:1;letter-spacing:-.035em;margin:10px 0 17px}
+.company-list{border-top:1px solid var(--line)}.company-list article{padding:17px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;align-items:center}.company-list article b{font-size:14px}.company-list article span{color:var(--muted);font-size:12px}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:10px}.board-card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px}.board-card small{color:var(--muted);font:500 9px "DM Mono",monospace}.board-card b{display:block;font-size:15px;margin:8px 0 5px}.board-card span{color:var(--muted);font-size:11px}
+.ownership{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:20px}.ownership-row{display:grid;grid-template-columns:1.1fr 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}.ownership-row:last-child{border-bottom:0}.ownership-bar{height:6px;background:#222a2f;border-radius:99px;overflow:hidden}.ownership-bar i{display:block;height:100%;background:var(--cyan)}
+.network-company{border:1px solid var(--line);border-radius:18px;background:radial-gradient(circle at center,#13181d,#0b0e10 70%);overflow:hidden}.network-company svg{display:block;width:100%}.network-company line{stroke:#3b464f;stroke-width:1.5}.network-company .center{fill:#141a1f;stroke:var(--cyan);stroke-width:2}.network-company .project{fill:#141a1f;stroke:var(--accent);stroke-width:2}.network-company .person{fill:#141a1f;stroke:var(--pink);stroke-width:2}.network-company .institution{fill:#141a1f;stroke:var(--purple);stroke-width:2}.network-company text{fill:var(--text);font:500 10px "DM Mono",monospace;text-anchor:middle}
+.source-panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:20px}.source-item{padding:13px 0;border-top:1px solid var(--line)}.source-item:first-child{border-top:0;padding-top:0}.source-item b{font-size:12px}.source-item span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+@media(max-width:1000px){.company-profile,.company-content{grid-template-columns:1fr}}
+@media(max-width:650px){.company-profile h1{font-size:54px}.company-facts{grid-template-columns:1fr}.company-facts div{border-right:0}.company-facts div:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.company-facts div:last-child{border-bottom:0}.board{grid-template-columns:1fr}.ownership-row{grid-template-columns:1fr}.ownership-bar{margin:4px 0}}
+</style>
+</head>
+<body>
+<div class="demo-bar">PROTOTIPE DESAIN · DATA DEMO · BELUM UNTUK KESIMPULAN FAKTUAL</div>
+<header class="topbar">
+  <a class="brand" href="index.html">PSN <span>WATCH</span></a>
+  <nav><a href="index.html">Beranda</a><a href="index.html#proyek">Proyek</a><a href="index.html#perusahaan">Perusahaan</a><a href="index.html#orang">Orang</a><a href="index.html#aturan">Aturan</a><a href="index.html#jaringan">Jaringan</a></nav>
+  <a class="back-link" href="index.html#perusahaan">← Kembali</a>
+</header>
+
+<main class="page">
+  <div class="breadcrumbs"><a href="index.html">Beranda</a><span>/</span><a href="index.html#perusahaan">Perusahaan</a><span>/</span><b>Perusahaan A</b></div>
+
+  <section class="company-profile">
+    <div>
+      <div class="eyebrow">PERUSAHAAN · KONTRAKTOR</div>
+      <h1>Perusahaan A</h1>
+      <div><span class="company-badge">DEMO · BELUM DIVERIFIKASI</span></div>
+      <p>Halaman profil perusahaan. Versi final akan menghubungkan entitas ini dengan proyek, struktur korporasi, direksi/komisaris, pemegang saham, orang terkait, dan evidence.</p>
+    </div>
+    <div class="company-facts">
+      <div><small>TIPE</small><b>Kontraktor</b></div>
+      <div><small>GRUP</small><b>Belum ditentukan</b></div>
+      <div><small>PROYEK TERKAIT</small><b>4 proyek</b></div>
+      <div><small>STATUS DATA</small><b>Perlu verifikasi</b></div>
+    </div>
+  </section>
+
+  <nav class="company-tabs">
+    <a class="active" href="#profil">Profil</a><a href="#proyek">Proyek</a><a href="#struktur">Struktur</a><a href="#board">Direksi & Komisaris</a><a href="#pemegang-saham">Pemegang Saham</a><a href="#orang">Orang Terkait</a><a href="#jaringan">Jaringan</a><a href="#bukti">Bukti</a>
+  </nav>
+
+  <section id="profil" class="company-content">
+    <div>
+      <section class="company-section"><div class="section-label">PROFIL</div><h2>Tentang perusahaan</h2><p class="muted">Pada data final bagian ini akan memuat nama legal, nomor identitas perusahaan yang relevan bila dapat dipublikasikan, bidang usaha, grup, anak perusahaan, dan sumber resmi yang mendukung setiap fakta.</p></section>
+      <section id="proyek" class="company-section"><div class="section-label">PROYEK TERKAIT</div><h2>Di proyek mana perusahaan ini muncul?</h2><div class="company-list">
+        <article><b>Jalan Tol Serang–Panimbang</b><span>Kontraktor · DEMO</span></article>
+        <article><b>Proyek Jalan X</b><span>Konsorsium · DEMO</span></article>
+        <article><b>Proyek Energi Y</b><span>Penyedia · DEMO</span></article>
+        <article><b>Proyek Kawasan Z</b><span>Kontraktor · DEMO</span></article>
+      </div></section>
+    </div>
+    <aside>
+      <section class="company-section"><div class="section-label">RINGKASAN</div><div class="source-panel">
+        <div class="source-item"><b>Peran utama</b><span>Kontraktor</span></div>
+        <div class="source-item"><b>Wilayah proyek</b><span>Banten · Jawa · lainnya</span></div>
+        <div class="source-item"><b>Hubungan terpetakan</b><span>—</span></div>
+        <div class="source-item"><b>Evidence</b><span>Belum diverifikasi</span></div>
+      </div></section>
+      <section class="company-section"><div class="section-label">CATATAN DATA</div><p class="muted tiny">Nama “Perusahaan A” hanya placeholder. Tidak merujuk pada perusahaan nyata tertentu.</p></section>
+    </aside>
+  </section>
+
+  <section id="struktur" class="wide-block">
+    <div class="section-label">STRUKTUR KORPORASI</div><h2>Struktur perusahaan</h2>
+    <p class="muted">Visual ini akan menunjukkan induk, anak perusahaan, afiliasi, joint venture, dan relationship kepemilikan bila ada evidence.</p>
+    <div class="network-company">
+      <svg viewBox="0 0 900 330"><line x1="450" y1="160" x2="200" y2="75"/><line x1="450" y1="160" x2="700" y2="75"/><line x1="450" y1="160" x2="200" y2="255"/><line x1="450" y1="160" x2="700" y2="255"/>
+      <circle class="center" cx="450" cy="160" r="45"/><circle class="project" cx="200" cy="75" r="35"/><circle class="institution" cx="700" cy="75" r="35"/><circle class="person" cx="200" cy="255" r="35"/><circle class="project" cx="700" cy="255" r="35"/>
+      <text x="450" y="164">PERUSAHAAN A</text><text x="200" y="79">INDUK</text><text x="700" y="79">AFILIASI</text><text x="200" y="259">ORANG</text><text x="700" y="259">ANAK USAHA</text></svg>
+    </div>
+  </section>
+
+  <section id="board" class="wide-block">
+    <div class="section-label">DIREKSI & KOMISARIS</div><h2>Orang di dalam perusahaan</h2>
+    <div class="board"><div class="board-card"><small>DIREKTUR</small><b>Orang A</b><span>Periode jabatan · DEMO</span></div><div class="board-card"><small>KOMISARIS</small><b>Orang B</b><span>Periode jabatan · DEMO</span></div><div class="board-card"><small>DIREKTUR</small><b>Orang C</b><span>Periode jabatan · DEMO</span></div><div class="board-card"><small>KOMISARIS</small><b>Orang D</b><span>Periode jabatan · DEMO</span></div></div>
+  </section>
+
+  <section id="pemegang-saham" class="wide-block">
+    <div class="section-label">PEMEGANG SAHAM</div><h2>Siapa memiliki apa?</h2>
+    <div class="ownership">
+      <div class="ownership-row"><b>Entitas A</b><div class="ownership-bar"><i style="width:55%"></i></div><span>55% · DEMO</span></div>
+      <div class="ownership-row"><b>Entitas B</b><div class="ownership-bar"><i style="width:30%"></i></div><span>30% · DEMO</span></div>
+      <div class="ownership-row"><b>Lainnya</b><div class="ownership-bar"><i style="width:15%"></i></div><span>15% · DEMO</span></div>
+    </div>
+  </section>
+
+  <section id="orang" class="wide-block">
+    <div class="section-label">ORANG TERKAIT</div><h2>Relasi yang terdokumentasi</h2>
+    <div class="company-list"><article><b>Orang A</b><span>Direktur · DEMO</span></article><article><b>Orang B</b><span>Komisaris · DEMO</span></article><article><b>Orang C</b><span>Jabatan publik · DEMO</span></article></div>
+  </section>
+
+  <section id="jaringan" class="wide-block">
+    <div class="section-label">JARINGAN</div><h2>Perusahaan dalam konteks jejaring</h2>
+    <div class="network-company"><svg viewBox="0 0 900 330"><line x1="450" y1="165" x2="180" y2="80"/><line x1="450" y1="165" x2="720" y2="80"/><line x1="450" y1="165" x2="180" y2="250"/><line x1="450" y1="165" x2="720" y2="250"/>
+      <circle class="center" cx="450" cy="165" r="45"/><circle class="project" cx="180" cy="80" r="35"/><circle class="project" cx="720" cy="80" r="35"/><circle class="person" cx="180" cy="250" r="35"/><circle class="institution" cx="720" cy="250" r="35"/>
+      <text x="450" y="169">PERUSAHAAN A</text><text x="180" y="84">PROYEK A</text><text x="720" y="84">PROYEK B</text><text x="180" y="254">ORANG</text><text x="720" y="254">INSTITUSI</text></svg></div>
+  </section>
+
+  <section id="bukti" class="wide-block">
+    <div class="section-label">BUKTI</div><h2>Sumber & evidence</h2>
+    <div class="source-panel"><div class="source-item"><b>Dokumen korporasi</b><span>Belum terhubung · demo</span></div><div class="source-item"><b>Dokumen proyek</b><span>Belum terhubung · demo</span></div><div class="source-item"><b>Dokumen pemerintah</b><span>Belum terhubung · demo</span></div></div>
+  </section>
+</main>
+<footer><span>PSN Watch Indonesia · Prototype UI v0.8</span><span>Data final akan berbasis sumber & evidence</span></footer>
+</body>
+</html>
