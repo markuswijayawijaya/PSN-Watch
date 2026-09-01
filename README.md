@@ -1,30 +1,17 @@
-# PSN Watch Indonesia — v0.1
+# PSN Watch — Template Dossier Case Study
 
-Prototype open-data project untuk memetakan Proyek Strategis Nasional (PSN),
-perusahaan, orang, aturan, uang, dan hubungan antar-entitas berbasis evidence.
+Template penelitian untuk setiap case study. Isi berdasarkan sumber; jangan mengisi dengan asumsi.
+Gunakan satu folder/case per objek.
+
+## Case pilot
+1. Rempang Eco City
+2. Program/kawasan pangan Merauke
+3. Bendungan Bener — linked case Wadas
+4. Jalan Tol Serang–Panimbang — benchmark proyek
 
 ## Prinsip
-1. Source-first: setiap fakta/relationship punya sumber.
-2. Primary-source-first: regulasi dan dokumen resmi diprioritaskan.
-3. Google/search engine hanya untuk discovery, bukan sumber kebenaran.
-4. AI membantu ekstraksi dan pencarian kandidat; publikasi membutuhkan verifikasi.
-5. Data historis tidak ditimpa; perubahan dicatat.
-6. Fakta, laporan media, dan inferensi dipisahkan.
-
-## Pilot
-Versi ini berisi seed 10 proyek untuk pengujian schema. Data yang belum diverifikasi
-dibiarkan kosong; jangan mengisi dengan tebakan.
-
-## Struktur
-- data/: dataset CSV
-- research/: metodologi dan kebijakan sumber
-- scripts/: utilitas validasi/import
-- website/: placeholder untuk frontend
-
-## Status
-MVP data model — belum merupakan database nasional lengkap.
-
-## Important: time-aware PSN list
-The pilot uses a 2026-oriented snapshot from Kemenko/KPPIP. Historical changes are
-kept separately in `data/historical_projects.csv`. This avoids presenting removed
-projects as currently active PSN.
+- Setiap klaim penting memiliki source_id dan evidence_id.
+- Bedakan status PSN dari status pelaksanaan.
+- Bedakan proyek dari program.
+- Bedakan fakta, laporan pihak, dan inferensi.
+- Simpan perubahan historis; jangan menimpa data lama.

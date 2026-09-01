@@ -1,6 +1,1 @@
-﻿regulation_id,title,subject,date,status,url,source_id
-R001,Perpres 3 Tahun 2016,Percepatan Pelaksanaan Proyek Strategis Nasional,2016-01-12,Berlaku,https://peraturan.bpk.go.id/Details/38201/pe,src_perpres_3_2016
-R002,PP 42 Tahun 2021,Kemudahan Proyek Strategis Nasional,2021,,https://peraturan.bpk.go.id/Search?jenis=122%2F1000&p=241,src_pp_42_2021
-R003,Permenko Perekonomian 16 Tahun 2025,Perubahan Kedelapan atas Permenko 7 Tahun 2021 tentang Perubahan Daftar PSN,2025-09-24,Berlaku,https://peraturan.bpk.go.id/Details/330372/permenko-perekonomian-no-16-tahun-2025,src_perm_16_2025
-R004,Permenko Perekonomian 19 Tahun 2025,Penambahan Daftar Proyek Strategis Nasional,2025-12-02,Berlaku,https://peraturan.bpk.go.id/Details/342588/permenko-perekonomian-no-19-tahun-2025,src_perm_19_2025
-R005,Permenko Perekonomian 20 Tahun 2025,"Tata Cara Penyampaian Usulan, Verifikasi, Evaluasi, Penetapan, Pemantauan dan Pelaporan Perubahan Daftar PSN",2025-12-02,Berlaku,https://peraturan.bpk.go.id/Details/343044/permenko-perekonomian-no-20-tahun-2025,src_perm_20_2025
+﻿regulation_id,case_id,title,type,date,status,url,source_id,what_it_regulates

@@ -1,2 +1,1 @@
-﻿company_id,name,company_type,parent_company_id,stock_code,website,notes
-C001,,,,,,
+﻿company_id,name,company_type,group_name,parent_company_id,website,notes

@@ -1,2 +1,1 @@
-﻿person_id,name,role,organization,valid_from,valid_to,notes
-PE001,,,,,,
+﻿person_id,name,role,organization,valid_from,valid_to,public_role,notes

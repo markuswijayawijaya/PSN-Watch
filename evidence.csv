@@ -1,4 +1,1 @@
-﻿evidence_id,source_id,entity_type,entity_id,claim,page_or_section,verification_status,verified_at,reviewer,notes
-E001,src_iru_2026,project,P001,"KPPIP/Kemenko 2026 menempatkan Jalan Tol Sigli–Banda Aceh sebagai PSN dengan target selesai 2026 dan investasi IDR 16,5 T",IRU Presentation Book p.25,verified,2026-09-01,system,Snapshot 2026
-E002,src_iru_2026,project,P006,KPPIP/Kemenko 2026 menempatkan Kawasan Industri Tanah Kuning (PT ISI) sebagai PSN dengan target selesai 2026 dan investasi IDR 55 T,IRU Presentation Book p.25,verified,2026-09-01,system,Snapshot 2026
-E003,src_benteng_pu,project,P008,"SPAM Regional Benteng Kobema selesai 100% pada Desember 2024; pekerjaan konstruksi Rp373,7 miliar",Siaran pers 7 Feb 2025,verified,2026-09-01,system,"Angka ini adalah anggaran pekerjaan, bukan otomatis total capex PSN"
+﻿evidence_id,case_id,source_id,entity_type,entity_id,claim,page_or_section,verification_status,verified_at,notes
