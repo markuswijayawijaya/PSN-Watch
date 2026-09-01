@@ -46,7 +46,7 @@
 
 <section id="uang" class="wide-block two-col"><div><div class="section-label">PENDANAAN</div><h2>Jejak uang</h2><p class="muted">Nilai investasi, nilai kontrak, sumber dana, dan skema penyediaan dipisahkan sehingga tidak tercampur.</p></div><div class="funding-card"><div class="funding-row"><span>APBN / APBD</span><i style="width:24%"></i><b>verifikasi</b></div><div class="funding-row"><span>BUMN</span><i style="width:44%"></i><b>verifikasi</b></div><div class="funding-row"><span>Swasta</span><i style="width:67%"></i><b>verifikasi</b></div><div class="funding-row"><span>KPBU</span><i style="width:40%"></i><b>verifikasi</b></div><div class="small-note">Placeholder visual — bukan pembagian pendanaan aktual.</div></div></section>
 
-<section id="perusahaan" class="wide-block"><div class="section-label">PERUSAHAAN</div><h2>Siapa yang terlibat?</h2><div class="entity-grid"><article class="entity"><span>DEMO</span><h3>Perusahaan A</h3><p>Kontraktor</p><b>4 proyek terkait</b></article><article class="entity"><span>DEMO</span><h3>Perusahaan B</h3><p>Investor / BUMN</p><b>3 proyek terkait</b></article><article class="entity"><span>DEMO</span><h3>Perusahaan C</h3><p>Operator</p><b>2 proyek terkait</b></article></div></section>
+<section id="perusahaan" class="wide-block"><div class="section-label">PERUSAHAAN</div><h2>Siapa yang terlibat?</h2><div class="entity-grid"><a class="entity" href="perusahaan-a.html"><span>DEMO</span><h3>Perusahaan A</h3><p>Kontraktor</p><b>4 proyek terkait</b></a><a class="entity" href="perusahaan-a.html"><span>DEMO</span><h3>Perusahaan B</h3><p>Investor / BUMN</p><b>3 proyek terkait</b></a><a class="entity" href="perusahaan-a.html"><span>DEMO</span><h3>Perusahaan C</h3><p>Operator</p><b>2 proyek terkait</b></a></div></section>
 
 <section id="aturan" class="wide-block"><div class="section-label">REGULASI</div><h2>Dasar hukum & perubahan aturan</h2><div class="law-list"><article><span>2016</span><div><b>Perpres No. 3 Tahun 2016</b><p>Kerangka awal percepatan PSN.</p></div><em>Dokumen</em></article><article><span>2021</span><div><b>PP No. 42 Tahun 2021</b><p>Kemudahan PSN.</p></div><em>Dokumen</em></article><article><span>2025</span><div><b>Permenko 16 / 19 / 20 Tahun 2025</b><p>Perubahan, penambahan, dan mekanisme perubahan daftar PSN.</p></div><em>Dokumen</em></article></div></section>
 
@@ -55,5 +55,13 @@
 <section id="jaringan" class="wide-block"><div class="section-label">JARINGAN</div><h2>Ikuti hubungan proyek</h2><div class="network-mini"><svg viewBox="0 0 920 390"><line x1="460" y1="195" x2="230" y2="105"/><line x1="460" y1="195" x2="690" y2="105"/><line x1="460" y1="195" x2="230" y2="290"/><line x1="460" y1="195" x2="690" y2="290"/><circle class="n project" cx="460" cy="195" r="48"/><circle class="n company" cx="230" cy="105" r="35"/><circle class="n company" cx="690" cy="105" r="35"/><circle class="n company" cx="230" cy="290" r="35"/><circle class="n person" cx="690" cy="290" r="35"/><text x="460" y="199">PROYEK</text><text x="230" y="109">PERUSAHAAN</text><text x="690" y="109">PERUSAHAAN</text><text x="230" y="294">PERUSAHAAN</text><text x="690" y="294">ORANG</text></svg><div class="network-caption">Preview. Tombol “Jaringan” akan membuka Network 2.0 pada versi aplikasi final.</div></div></section>
 </main>
 <footer><span>PSN Watch Indonesia · Prototype UI v0.7</span><span>Data final akan berbasis sumber & evidence</span></footer>
+
+<script>
+const tabs=[...document.querySelectorAll('.project-tabs a')];
+const sections=tabs.map(t=>document.querySelector(t.getAttribute('href'))).filter(Boolean);
+const setActive=()=>{let current=sections[0];const y=window.scrollY+180;sections.forEach(s=>{if(s.offsetTop<=y) current=s});tabs.forEach(t=>t.classList.toggle('active',t.getAttribute('href')==='#'+current.id));};
+window.addEventListener('scroll',setActive,{passive:true}); window.addEventListener('load',setActive);
+tabs.forEach(t=>t.addEventListener('click',()=>setTimeout(setActive,80)));
+</script>
 </body>
 </html>

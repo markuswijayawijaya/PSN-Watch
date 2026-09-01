@@ -20,3 +20,6 @@ dialog{width:min(720px,92vw);border:1px solid var(--line);border-radius:20px;bac
 @media(max-width:700px){.topbar{padding:14px 4vw}.stats{grid-template-columns:1fr 1fr}.stats>div{padding:20px 14px 20px 0}.stats>div:not(:first-child){padding-left:14px}.section-head{align-items:stretch;flex-direction:column}.filters,.map-filters,.graph-tools{justify-content:flex-start}.project-grid,.people-grid,.company-grid,.entity-grid{grid-template-columns:1fr}.map-card{min-height:300px;overflow:auto}.map-svg{min-width:700px}.network-canvas{overflow:auto}.network-canvas svg{min-width:850px}.node-inspector{position:relative;width:auto;right:auto;bottom:auto;margin:14px}.rule,.law-list article{grid-template-columns:70px 1fr}.rule em,.law-list em{display:none}.doc-row{grid-template-columns:1fr 1.6fr .7fr}.doc-row span:last-of-type,.doc-row em{display:none}.timeline article{grid-template-columns:65px 1fr}footer{flex-direction:column}.detail-grid{grid-template-columns:1fr}.project-tabs{top:52px}}
 
 .company-card{display:block}.company-card:hover{color:inherit}
+
+.entity{display:block;color:inherit;text-decoration:none}
+.entity:hover{color:inherit}
