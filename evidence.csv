@@ -1,1 +1,9 @@
-﻿evidence_id,case_id,source_id,entity_type,entity_id,claim,page_or_section,verification_status,verified_at,notes
+﻿evidence_id,source_id,entity_id,claim_type,claim,page_or_section,quote,verification_status
+E001,S001,P001,Status PSN / proyek,KPPIP menampilkan Jalan Tol Serang–Panimbang sebagai Proyek Strategis Nasional dan status Beroperasi Sebagian.,,,verified
+E002,S002,P001,Nilai investasi,"KPPIP mencantumkan Investasi Total Rp9,934 triliun; APBN/APBD Rp4,604 T; swasta Rp5,330 T; skema KPBU.",,,verified
+E003,S003,P001,Skema KPBU,"SIMPUL mencantumkan indikasi investasi Rp8,57 T, konstruksi Rp5,63 T, konsesi 50 tahun, BOT, user charge.",,,verified
+E004,S005,P001,Progress 23 Jan 2026,"BPJT mencatat Seksi 2 97,09% dan Seksi 3 73,68%; Seksi 3 target rampung 2027.",,,verified
+E005,S006,P001,Progress 5 Feb 2026,"WIKA mencatat Seksi 2 96,78%; Seksi 3A 99,78%; Seksi 3B 58,95%.",,,verified
+E006,S007,C001,BUJT / perusahaan,"WIKA menyebut PT Wijaya Karya Serang Panimbang sebagai pengusaha jalan tol dan hasil kerja sama WIKA, PTPP, Jababeka Infrastruktur.",,,verified
+E007,S008,C001,Ownership change,"Laporan tahunan WIKA 2025 menyatakan kepemilikan WIKA di WSP berubah dari 82,98% menjadi 84,17% melalui penambahan modal pada 2024.",,,verified
+E008,S010,P001,Dasar PSN historis,Annual report WSP menyebut proyek sebagai PSN sesuai Perpres 56/2018 dan PPJT ditandatangani 22 Feb 2017.,,,verified
